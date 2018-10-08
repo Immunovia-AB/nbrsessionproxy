@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="proxy",
+    name="nbrsessionproxy",
     version='0.1.0',
     url="https://github.com/Immunovia-AB/proxy",
     description="Jupyter extension to proxy RStudio's rsession",
@@ -11,5 +11,5 @@ setuptools.setup(
         'notebook',
         'nbserverproxy >= 0.8.3'
     ],
-    package_data={'proxy': ['static/*']},
+    package_data={'nbrsessionproxy': ['static/*']},
 )
