@@ -23,6 +23,11 @@ RUN apt-get clean && \
 RUN mkdir -p /srv/app1
 COPY ./app/ /srv/app1
 
+COPY packages.R /tmp/
+RUN cd /tmp && \
+    Rscript packages.R && \
+    rm -r *
+
 USER $NB_USER
 
 RUN pip install git+https://github.com/jupyterhub/nbserverproxy.git
@@ -35,5 +40,3 @@ RUN jupyter nbextension enable     --sys-prefix --py nbrsessionproxy
 
 ENV PATH="${PATH}:/usr/lib/rstudio-server/bin"
 ENV LD_LIBRARY_PATH="/usr/lib/R/lib:/lib:/usr/lib/x86_64-linux-gnu:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server:/opt/conda/lib/R/lib"
-
-RUN R -e "install.packages('shiny')"
