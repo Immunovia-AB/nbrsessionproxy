@@ -1,4 +1,4 @@
-FROM jupyter/r-notebook
+FROM jupyter/base-notebook
 
 USER root
 
