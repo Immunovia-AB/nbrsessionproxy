@@ -9,6 +9,7 @@ RUN apt-get update && \
 		lsb-release \
 		psmisc \
 		libssl1.0.0 \
+		r-base-core \
 		;
 
 ENV RSTUDIO_PKG=rstudio-server-1.1.456-amd64.deb
